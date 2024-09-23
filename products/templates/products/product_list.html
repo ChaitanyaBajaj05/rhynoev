@@ -1,0 +1,66 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Products - RHYNO EV{% endblock %}
+
+{% block content %}
+<section class="py-5 bg-dark text-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Products</h2>
+        <div class="row">
+            {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-secondary shadow-lg rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="overlay d-flex justify-content-center align-items-center">
+                            <a href="{% url 'products:compare_products' %}" class="btn btn-outline-warning btn-lg">Compare</a>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <h4 class="card-title font-weight-bold">{{ product.name }}</h4>
+                        <p class="card-text">{{ product.description|truncatewords:20 }}</p>
+                        <a href="{% url 'products:product_detail' product.id %}" class="btn btn-warning">View Details</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<style>
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7); /* Slightly darker overlay */
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .card:hover .overlay {
+        opacity: 1;
+    }
+    .btn-outline-warning {
+        border-color: #d4af37;
+        color: #d4af37;
+    }
+    .btn-outline-warning:hover {
+        background-color: #d4af37;
+        color: #fff;
+    }
+    .btn-warning {
+        background-color: #d4af37;
+        border-color: #d4af37;
+    }
+    .btn-warning:hover {
+        background-color: #b89b2e;
+        border-color: #b89b2e;
+    }
+</style>
+{% endblock %}
