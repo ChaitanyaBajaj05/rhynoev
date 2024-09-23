@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Pre-Book Your Vehicle - RHYNO EV{% endblock %}
+
+{% block content %}
+<!-- Pre-booking Form -->
+<section class="pre-booking py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Pre-Book Your Vehicle</h2>
+        <form action="{% url 'pre_book' %}" method="post" id="pre-book-form">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="vehicle">Select Vehicle</label>
+                <select class="form-control" id="vehicle" name="vehicle" required>
+                    <option value="" disabled selected>Select your vehicle</option>
+                    <option value="SE03 Lite">SE03 Lite</option>
+                    <option value="SE03">SE03</option>
+                    <option value="SE03 Max">SE03 Max</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="text" class="form-control" id="amount" name="amount" value="1000" readonly>
+            </div>
+            <button type="submit" class="btn btn-primary">Pre-Book Now</button>
+        </form>
+        <div>
+            <p class="lead" style="font-size: 1.25rem;"><b>This Website is only for Practice and Sample website Don't do any payment in this website
+                Developer is not responsible</b></p>
+                </p>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
