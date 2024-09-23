@@ -1,0 +1,142 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Home - RHYNO EV{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero text-white text-center py-5" style="background-image: url('{% static 'main/images/rhyno_final.png' %}'); background-size: cover; background-position: center; background-color: #000; background-blend-mode: overlay; color: #fff;">
+    <div class="overlay py-5" style="background: rgba(0, 0, 0, 0.5);">
+        <div class="container">
+            <h1 class="display-4 font-weight-bold" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Welcome to RHYNO EV</h1>
+            <p class="lead" style="font-size: 1.25rem;">Innovative electric vehicles for a sustainable future.</p>
+            <a href="{% url 'products:compare_products' %}" class="btn btn-warning btn-lg" style="border-radius: 50px; padding: 15px 30px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);">Compare Our Vehicles</a>
+        </div>
+    </div>
+</section>
+
+<!-- Search Section -->
+<section class="search py-5 bg-dark text-white">
+    <div class="container">
+        <h2 class="text-center mb-4" style="font-size: 2rem; font-weight: bold;">Find Your Perfect Electric Vehicle</h2>
+        <form class="form-inline justify-content-center">
+            <div class="input-group mb-3">
+                <input class="form-control form-control-lg rounded-pill" type="search" placeholder="Search vehicles..." aria-label="Search" style="border: 2px solid #333; background-color: #444; color: #fff;">
+                <div class="input-group-append">
+                    <button class="btn btn-warning btn-lg rounded-pill" type="submit" style="border: 2px solid #d4af37;">Search</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features py-5 bg-dark text-white">
+    <div class="container">
+        <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: bold;">Why Choose Us?</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-secondary text-light shadow-lg rounded" style="border-radius: 15px; overflow: hidden;">
+                    <img src="{% static 'main/images/1.jpg' %}" class="card-img-top" alt="Eco-Friendly" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="font-weight: 600;">Eco-Friendly</h4>
+                        <p class="card-text" style="font-size: 1.1rem;">Reduce your carbon footprint with our top-notch electric vehicles.</p>
+                        <a href="#" class="btn btn-warning" style="border-radius: 50px;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-secondary text-light shadow-lg rounded" style="border-radius: 15px; overflow: hidden;">
+                    <img src="{% static 'main/images/2.jpeg' %}" class="card-img-top" alt="High Performance" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="font-weight: 600;">High Performance</h4>
+                        <p class="card-text" style="font-size: 1.1rem;">Experience superior performance and cutting-edge technology.</p>
+                        <a href="#" class="btn btn-warning" style="border-radius: 50px;">Discover More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 bg-secondary text-light shadow-lg rounded" style="border-radius: 15px; overflow: hidden;">
+                    <img src="{% static 'main/images/3.jpeg' %}" class="card-img-top" alt="Affordable Pricing" style="height: 200px; object-fit: cover;">
+                    <div class="card-body text-center">
+                        <h4 class="card-title" style="font-weight: 600;">Affordable Pricing</h4>
+                        <p class="card-text" style="font-size: 1.1rem;">Find electric vehicles that match your budget.</p>
+                        <a href="#" class="btn btn-warning" style="border-radius: 50px;">See Pricing</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- Testimonials -->
+<section class="testimonials bg-dark text-white py-5">
+    <div class="container text-center">
+        <h2 class="mb-4" style="font-size: 2.5rem; font-weight: bold;">What Our Customers Say</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0" style="font-size: 1.5rem;">"Fantastic service and an exceptional vehicle. Highly recommend RHYNO EV!"</p>
+                        <footer class="blockquote-footer text-light" style="font-size: 1.2rem;">Alex Johnson</footer>
+                    </blockquote>
+                </div>
+                <div class="carousel-item">
+                    <blockquote class="blockquote text-center">
+                        <p class="mb-0" style="font-size: 1.5rem;">"A game-changer in the electric vehicle market. Excellent performance and features."</p>
+                        <footer class="blockquote-footer text-light" style="font-size: 1.2rem;">Emily Davis</footer>
+                    </blockquote>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="newsletter bg-dark py-5 text-center text-white">
+    <div class="container">
+        <h2 class="mb-4" style="font-size: 2rem; font-weight: bold;">Stay Updated</h2>
+        <p class="mb-4" style="font-size: 1.2rem;">Subscribe to our newsletter for the latest news and updates on our electric vehicles.</p>
+        <form class="form-inline justify-content-center">
+            <div class="input-group">
+                <input class="form-control form-control-lg rounded-pill" type="email" placeholder="Enter your email" aria-label="Email" style="border: 2px solid #333; background-color: #444; color: #fff;">
+                <div class="input-group-append">
+                    <button class="btn btn-warning btn-lg rounded-pill" type="submit">Subscribe</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Interactive Map -->
+<section class="map py-5">
+    <div class="container">
+        <h2 class="text-center mb-4" style="font-size: 2rem; font-weight: bold;">Find Us on the Map</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.488789468506!2d-122.42140068468185!3d37.77492927975989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808a2b4a0c1f%3A0x57e3a5a9b104bbd8!2sSan%20Francisco%2C%20CA%2094102!5e0!3m2!1sen!2sus!4v1646096976435!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta bg-dark text-center py-5 text-white">
+    <div class="container">
+        <h2 class="mb-4" style="font-size: 2.5rem; font-weight: bold;">Ready to Make the Switch?</h2>
+        <a href="{% url 'rentals' %}" class="btn btn-warning btn-lg rounded-pill" style="padding: 15px 30px;">Explore Our Rentals</a>
+    </div>
+</section>
+
+
+
+{% endblock %}

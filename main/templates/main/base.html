@@ -1,0 +1,218 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %}RHYNO EV{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome for icons -->
+        {% load static %}
+        <style>
+            /* Custom styles */
+            body {
+                background-color: #121212; /* Dark background for body */
+                color: #e0e0e0; /* Light text color */
+            }
+
+            .navbar {
+                background-color: #000000; /* Black background for the navbar */
+                border-bottom: 2px solid #d4af37; /* Gold border for a touch of luxury */
+            }
+
+            .navbar-brand {
+                font-family: 'Georgia', serif; /* Elegant font for the brand */
+                font-size: 24px;
+                color: #d4af37; /* Gold color for the brand name */
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+            }
+
+            .navbar-brand img {
+                height: 40px; /* Adjust the logo size */
+                margin-right: 10px; /* Space between logo and brand name */
+            }
+
+            .navbar-nav .nav-link {
+                color: #e0e0e0; /* Light text for the navigation links */
+                font-size: 16px; /* Font size for the navigation links */
+                padding: 15px 20px; /* Padding around each link */
+                transition: all 0.3s ease; /* Smooth transition for hover effects */
+                position: relative; /* Required for pseudo-element positioning */
+            }
+
+            .navbar-nav .nav-link:hover {
+                color: #d4af37; /* Gold color on hover */
+            }
+
+            .navbar-nav .nav-link::before {
+                content: ''; /* Creates an empty element */
+                position: absolute; /* Positions it relative to the parent */
+                left: 0;
+                bottom: 0;
+                height: 3px; /* Height of the underline */
+                width: 100%;
+                background-color: #d4af37; /* Gold underline */
+                transform: scaleX(0); /* Initially hidden */
+                transition: transform 0.3s ease; /* Smooth transition for scaling effect */
+            }
+
+            .navbar-nav .nav-link:hover::before {
+                transform: scaleX(1); /* Expands underline on hover */
+            }
+
+            /* Navbar toggler styles */
+            .navbar-toggler {
+                border: 1px solid #d4af37; /* Gold border for the toggler button */
+                background-color: #121212; /* Dark background for the toggler */
+            }
+
+            .navbar-toggler-icon {
+                background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"%3E%3Cpath fill="%23d4af37" d="M3 6h18v2H3zm0 4h18v2H3zm0 4h18v2H3z"/%3E%3C/svg%3E'); /* Gold hamburger icon */
+            }
+
+            /* Additional styles for dropdowns */
+            .navbar .dropdown-menu {
+                background-color: #333; /* Dark background for dropdown */
+                border: none; /* Remove default border */
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for dropdown */
+            }
+
+            .navbar .dropdown-item {
+                color: #e0e0e0; /* Light text for dropdown items */
+                padding: 10px 20px; /* Padding for dropdown items */
+                transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+            }
+
+            .navbar .dropdown-item:hover {
+                background-color: rgba(255, 215, 0, 0.2); /* Subtle gold background on hover */
+                color: #000; /* Black text on hover */
+                border-radius: 5px; /* Rounded corners on hover */
+            }
+
+            /* Footer styles */
+            .footer {
+                background-color: #1e1e1e;
+                color: #e0e0e0;
+                padding: 40px 0;
+                margin-top: 40px; /* Space between content and footer */
+            }
+
+            .footer .footer-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .footer .footer-links a {
+                color: #d4af37;
+                text-decoration: none;
+                margin: 0 15px;
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+
+            .footer .footer-links a:hover {
+                color: #fff;
+            }
+
+            .footer .social-icons {
+                text-align: center;
+            }
+
+            .footer .social-icons a {
+                color: #d4af37;
+                font-size: 24px;
+                margin: 0 10px;
+                transition: color 0.3s;
+            }
+
+            .footer .social-icons a:hover {
+                color: #fff;
+            }
+
+            @media (max-width: 576px) {
+                .footer .footer-links {
+                    text-align: center;
+                }
+
+                .footer .footer-links a {
+                    display: block;
+                    margin-bottom: 10px;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'main/images/logo.png' %}" alt="RHYNO EV Logo">
+                RHYNO EV
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'pre_book' %}">Pre Book</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{% url 'products:product_list' %}">All Products</a>
+                            <a class="dropdown-item" href="{% url 'products:compare_products' %}">Compare</a>
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'rentals' %}">Rentals</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="container mt-5">
+            {% block content %}
+            {% endblock %}
+        </div>
+
+        <footer class="footer bg-dark text-white py-4">
+            <div class="container">
+                <div class="row">
+                    <!-- Footer Links -->
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <div class="footer-links">
+                            <a href="#" class="text-light" style="text-decoration: none; margin-right: 15px;">Privacy Policy</a>
+                            <a href="#" class="text-light" style="text-decoration: none; margin-right: 15px;">Refund Policy</a>
+                            <a href="#" class="text-light" style="text-decoration: none; margin-right: 15px;">Website Policy</a>
+                            <a href="#" class="text-light" style="text-decoration: none; margin-right: 15px;">Contact Us</a>
+                            <a href="#" class="text-light" style="text-decoration: none; margin-right: 15px;">Products</a>
+                            <a href="#" class="text-light" style="text-decoration: none; margin-right: 15px;" target="_blank">Career</a>
+                            <a href="{% url 'rentals' %}" class="text-light" style="text-decoration: none;">Rentals</a>
+                        </div>
+                        <div>
+                            <p class="lead" style="font-size: 1.25rem;"><b>This Website is only for Practice and Sample website Don't do any payment in this website
+                            Developer is not responsible</b></p>
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Social Icons -->
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/yourinstagram" target="_blank" class="fab fa-instagram fa-2x text-light" style="margin: 0 10px;"></a>
+                            <a href="https://www.linkedin.com/company/yourcompany" target="_blank" class="fab fa-linkedin fa-2x text-light" style="margin: 0 10px;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+    </html>

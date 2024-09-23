@@ -1,0 +1,77 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header.jumbotron {
+    background: url('{% static "images/luxury-background.jpg" %}') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.blockquote {
+    border-left: 5px solid #333;
+    padding-left: 15px;
+    font-style: italic;
+}
+
+.bg-dark {
+    background-color: #000 !important;
+}
+
+.btn-light {
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+/* Custom styles for a luxurious navigation bar */
+
+.navbar {
+    background-color: #1a1a1a; /* Darker background for luxury feel */
+}
+
+.navbar-brand img {
+    height: 50px; /* Adjust the logo size */
+}
+
+.navbar-nav .nav-link {
+    font-size: 16px; /* Larger font size for better readability */
+    font-weight: 500; /* Slightly bolder text */
+    color: #f0f0f0 !important; /* Light color for text */
+    margin-right: 20px; /* Spacing between links */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffd700 !important; /* Gold color on hover for a luxurious touch */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.navbar-nav .nav-link.active {
+    color: #ffd700 !important; /* Active link color */
+    font-weight: 700; /* Bold active link */
+}
+
+.navbar-toggler-icon {
+    background-image: url('{% static "images/toggler-icon.svg" %}'); /* Custom toggler icon */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff; /* Default text color */
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #d4af37; /* Highlight color */
+}

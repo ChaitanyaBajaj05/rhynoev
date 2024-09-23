@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Home - RHYNO EV{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+    }
+    .hero-section {
+        background: url('https://example.com/your-image.jpg') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+        border-bottom: 2px solid #d4af37; /* Gold border for a luxurious feel */
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .hero-section p {
+        font-size: 1.25rem;
+        margin: 0 15%;
+    }
+    .btn-app {
+        margin: 10px;
+        background-color: #d4af37; /* Gold background */
+        color: #000; /* Text color */
+        border-radius: 50px;
+        padding: 10px 20px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .btn-app img {
+        width: 24px;
+        height: 24px;
+        margin-right: 10px;
+    }
+    .btn-app:hover {
+        background-color: #b89b2e; /* Slightly darker gold on hover */
+    }
+    .container {
+        margin-top: 40px;
+    }
+</style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <h1>Explore the Roars of Rhyno</h1>
+        <p>Experience Rhyno at your own pace with our flexible rental model. Available for a week or a month, test the waters before committing. Visit our authorized dealerships to unlock this opportunity.</p>
+        <p>Redefining campus commuting with our fleet tailored for college students. Rent Rhyno vehicles hourly through our mobile app for effortless navigation.</p>
+    </div>
+</section>
+
+<!-- Download App Section -->
+<section class="container text-center mt-5">
+    <h2>Download Our Rental App</h2>
+    <p>Embrace the freedom to ride with our user-friendly mobile app:</p>
+    <a href="#" class="btn btn-app">
+        <img src="https://example.com/android-icon.png" alt="Android">
+        Download on the Android Store
+    </a>
+    <a href="#" class="btn btn-app">
+        <img src="https://example.com/apple-icon.png" alt="Apple">
+        Download on the Apple Store
+    </a>
+</section>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+{% endblock %}

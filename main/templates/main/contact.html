@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Contact Us - RHYNO EV{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4 text-light">Contact Us</h2>
+    
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-8 offset-md-2">
+            <div class="card border-0 bg-secondary shadow-lg">
+                <div class="card-body">
+                    <form>
+                        <div class="form-group mb-3">
+                            <label for="name" class="form-label text-light">Name</label>
+                            <input type="text" class="form-control form-control-lg bg-dark text-light border-0" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="email" class="form-label text-light">Email</label>
+                            <input type="email" class="form-control form-control-lg bg-dark text-light border-0" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label for="message" class="form-label text-light">Message</label>
+                            <textarea class="form-control form-control-lg bg-dark text-light border-0" id="message" rows="5" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-5 text-light">
+        <!-- Contact Information -->
+        <div class="col-md-4 text-center">
+            <h4 class="font-weight-bold">Our Address</h4>
+            <p class="lead">Rhyno Wheels Private Limited, Near UG Hostel Gate #2, Behind PDEU, Raisan,<br> Gandhinagar, Gujarat, India.</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h4 class="font-weight-bold">Phone</h4>
+            <p class="lead">+91-9023987528</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <h4 class="font-weight-bold">Email</h4>
+            <p class="lead"><a href="mailto:support@rhynoev.com" class="text-warning">info@rhyno.in</a></p>
+        </div>
+    </div>
+    
+    <div class="text-center mt-5">
+        <p class="lead text-light">Follow us on social media:</p>
+        <a href="https://facebook.com/rhynoev" class="btn btn-outline-warning btn-lg me-2">Facebook</a>
+        <a href="https://twitter.com/rhynoev" class="btn btn-outline-info btn-lg me-2">Twitter</a>
+        <a href="https://instagram.com/rhynoev" class="btn btn-outline-danger btn-lg">Instagram</a>
+    </div>
+</div>
+{% endblock %}
